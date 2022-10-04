@@ -32,28 +32,15 @@ Our proposed architecture consists of two parts:
 
 As illustrated in Figure 1 and 2, the spatial encoder and decoder have two convolutional and deconvolutional layers respectively, while the temporal encoder is a three-layer convolutional long short term memory (LSTM) model. Convolutional layers are well-known for its superb performance in object recognition, while LSTM model is widely used for sequence learning and time-series modelling.
 ![Model Architechture](Images/Fig1.png)
-**Figure 1:** *Our proposed network architecture. It takes a sequence of length T as
-input, and output a reconstruction of the input sequence. The numbers at the
-rightmost denote the output size of each layer. The spatial encoder takes one
-frame at a time as input, after which T = 10 frames have been processed, the
-encoded features of 10 frames are concatenated and fed into temporal encoder
-for motion encoding. The decoders mirror the encoders to reconstruct the video
-volume.*
+**Figure 1:** *Our proposed network architecture. It takes a sequence of length T as input, and output a reconstruction of the input sequence. The numbers at the rightmost denote the output size of each layer. The spatial encoder takes one frame at a time as input, after which T = 10 frames have been processed, the encoded features of 10 frames are concatenated and fed into temporal encoder for motion encoding. The decoders mirror the encoders to reconstruct the video volume.*
+
 ![Model Architechture](Images/Fig2.png)
 <br>
-**Figure 2:** *The zoomed-in architecture at time t, where t is the input vector at
-this time step. The temporal encoder-decoder model has 3 convolutional LSTM
-(ConvLSTM) layers*
+**Figure 2:** *The zoomed-in architecture at time t, where t is the input vector at this time step. The temporal encoder-decoder model has 3 convolutional LSTM (ConvLSTM) layers*
 
 ## Regularity Score:
 
-Once the model is trained, we can evaluate our models performance by feeding
-in testing data and check whether it is capable of detecting abnormal events
-while keeping false alarm rate low. To better compare with, we used the
-same formula to calculate the regularity score for all frames, the only difference
-being the learned model is of a different kind. The reconstruction error of all
-pixel values I in frame t of the video sequence is taken as the Euclidean distance
-between the input frame and the reconstructed frame.
+Once the model is trained, we can evaluate our models performance by feeding in testing data and check whether it is capable of detecting abnormal events while keeping false alarm rate low. To better compare with, we used the same formula to calculate the regularity score for all frames, the only difference being the learned model is of a different kind. The reconstruction error of all pixel values I in frame t of the video sequence is taken as the Euclidean distance between the input frame and the reconstructed frame.
 
 ## Step 1: Data Pre-Processing
 
