@@ -1,5 +1,4 @@
-Python 3.10.0 (v3.10.0:b494f5935c, Oct  4 2021, 14:59:19) [Clang 12.0.5 (clang-1205.0.22.11)] on darwin
-Type "help", "copyright", "credits" or "license()" for more information.
+
 import os
 import subprocess
 import argparse
@@ -48,7 +47,7 @@ def pose_estimation(outpath, outanns):
 
 def main():
     # root directory
-    root_direct = '/home/ubuntu/Avenue/AvenueDataset'
+    root_direct = '/Users/sohamkarak/Downloads/Avenue/AvenueDataset'
     # UCF_Anomalies dataset path
     dset_root = os.path.join(root_direct, 'training_videos')
     args = parser.parse_args()
@@ -68,7 +67,7 @@ def main():
         os.mkdir(outanns)
 
     # set working directory for AlphaPose framework
-    os.chdir('/home/ubuntu/PoseData/AlphaPose/')
+    os.chdir('/Users/sohamkarak/Downloads/')
     # create new directory structure and write annotation files at out_ann
     if args.pose:
         print("###############################")
